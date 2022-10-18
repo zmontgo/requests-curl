@@ -49,7 +49,7 @@ class CURLPoolProvider(object):
             # Create here the poolmanager for proxy
             self._pool_manager_per_proxy[parsed_proxy_url] = self._create_pool_manager(
                 lambda url, port, maxsize=1, **kwargs: ProxyCURLHandlerPool(
-                    proxy_url, maxsize=maxsize, **kwargs
+                    parsed_proxy_url, maxsize=maxsize, **kwargs
                 )
             )
 
