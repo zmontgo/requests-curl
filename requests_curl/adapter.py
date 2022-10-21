@@ -130,6 +130,7 @@ class CURLAdapter(BaseAdapter):
             CURLConnectionPool: a connection pool that is capable of handling the given request.
         """
         proxy_url = select_proxy(url, proxies)
+        print(proxy_url)
 
         if proxy_url:
             pool = self._pool_provider.get_pool_for_proxied_url(proxy_url, url)
